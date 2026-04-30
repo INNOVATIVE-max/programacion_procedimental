@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Pedido</title>
+    <!-- Bulma CSS para la estructura base -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            max-width: 450px;
+            width: 100%;
+            border: 1px solid #dbdbdb;
+            box-shadow: none; /* Quitamos sombras pesadas */
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 1.5rem !important;
+            color: #363636;
+        }
+
+        /* Botón de confirmar con un color sólido sencillo */
+        .button.is-confirm {
+            background-color: #48c78e;
+            color: white;
+            font-weight: bold;
+        }
+
+        .button.is-confirm:hover {
+            background-color: #3eb47e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2 class="title is-4">Nuevo Pedido</h2>
+
+    <div class="columns is-variable is-2">
+        <div class="column is-8">
+            <div class="field">
+                <label class="label">Mesa / Orden</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Número de mesa">
+                </div>
+            </div>
+        </div>
+
+        <div class="column is-4">
+            <div class="field">
+                <label class="label">Cantidad</label>
+                <div class="control">
+                    <input class="input" type="number" value="1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Seleccionar Platillo</label>
+        <div class="control">
+            <div class="select is-fullwidth">
+                <select>
+                    <option disabled selected>Elija un producto</option>
+                    <option>Postre de tres leches de CR7</option>
+                    <option>Pollo con arroz</option>
+                    <option>Rabiar con blanquillos</option>
+                    <option>Menú infantil</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="field is-grouped is-justify-content-space-between">
+        <div class="control">
+            <button class="button is-light">Limpiar</button>
+        </div>
+        <div class="control">
+            <button class="button is-confirm">Confirmar Orden</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
