@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Módulo Pedidos</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .contenedor{
+            width: 300px;
+            background: white;
+            padding: 15px;
+            border: 1px solid gray;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        label{
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 5px;
+            margin-top: 3px;
+        }
+
+        button{
+            margin-top: 15px;
+            width: 100%;
+            padding: 8px;
+            background-color: lightblue;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h2>Pedidos</h2>
+
+        <label>Producto</label>
+        <input type="text">
+
+        <label>Dirección</label>
+        <input type="text">
+
+        <label>Nombre del usuario</label>
+        <input type="text">
+
+        <label>Cantidad</label>
+        <input type="number">
+
+        <label>Método de pago</label>
+        <select>
+            <option>Efectivo</option>
+            <option>Nequi</option>
+            <option>Tarjeta</option>
+        </select>
+
+        <label>Teléfono</label>
+        <input type="text">
+
+        <button>Guardar Pedido</button>
+
+    </div>
+
+</body>
+</html>
