@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuarios - INNOVATIVE</title>
+    <style>
+        :root {
+            --bg-fondo: #0b0f19;
+            --bg-bloque: #161b26;
+            --neon-azul: #00f2fe;
+            --texto-blanco: #ffffff;
+            --texto-gris: #94a3b8;
+            --input-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: var(--bg-fondo);
+            color: var(--texto-blanco);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .contenedor {
+            max-width: 750px;
+            margin: 0 auto;
+            background-color: var(--bg-bloque);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 242, 254, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--neon-azul);
+            margin: 0 0 8px 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: var(--texto-gris);
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .formulario-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .field {
+            margin-bottom: 5px;
+        }
+
+        .field.full-width {
+            grid-column: span 2;
+        }
+
+        .label {
+            display: block;
+            color: var(--texto-blanco);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .input, select {
+            width: 100%;
+            background-color: #0b0f19;
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            padding: 12px;
+            color: var(--texto-blanco);
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .input:focus, select:focus {
+            outline: none;
+            border-color: var(--neon-azul);
+            box-shadow: 0 0 8px rgba(0, 242, 254, 0.3);
+        }
+
+        .input::placeholder {
+            color: #50617a;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .radio {
+            display: flex;
+            align-items: center;
+            color: var(--texto-gris);
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .radio input {
+            margin-right: 8px;
+            accent-color: var(--neon-azul);
+        }
+
+        .botones-grupo {
+            grid-column: span 2;
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .button.is-link {
+            background-color: var(--neon-azul);
+            color: #0b0f19;
+        }
+
+        .button.is-link:hover {
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .button.is-light {
+            background-color: transparent;
+            color: var(--texto-gris);
+            border: 1px solid var(--input-border);
+        }
+
+        .button.is-light:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--texto-blanco);
+        }
+
+        @media (max-width: 600px) {
+            .formulario-grid {
+                grid-template-columns: 1fr;
+            }
+            .field.full-width, .botones-grupo {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        
+        <header>
+            <h1>INNOVATIVE</h1>
+            <p>Registro y Control de Personal</p>
+        </header>
+
+        <form class="formulario-grid">
+            
+            <div class="field">
+                <label class="label">Nombre</label>
+                <input class="input" type="text" placeholder="Tu nombre">
+            </div>
+            
+            <div class="field">
+                <label class="label">Apellido</label>
+                <input class="input" type="text" placeholder="Tu apellido">
+            </div>
+            
+            <div class="field">
+                <label class="label">Tipo de documento</label>
+                <select>
+                    <option disabled selected hidden>Seleccione tipo</option>
+                    <option>Cédula de Ciudadanía</option>
+                    <option>Tarjeta de Identidad</option>
+                    <option>Pasaporte</option>
+                </select>
+            </div>
+            
+            <div class="field">
+                <label class="label">Número de documento</label>
+                <input class="input" type="text" placeholder="Número de identificación">
+            </div>
+            
+            <div class="field">
+                <label class="label">Teléfono</label>
+                <input class="input" type="tel" placeholder="Número de contacto">
+            </div>
+            
+            <div class="field">
+                <label class="label">Email</label>
+                <input class="input" type="email" placeholder="ejemplo@correo.com">
+            </div>
+            
+            <div class="field">
+                <label class="label">Cargo</label>
+                <input class="input" type="text" placeholder="Puesto de trabajo">
+            </div>
+            
+            <div class="field">
+                <label class="label">Fecha de nacimiento</label>
+                <input class="input" type="date">
+            </div>
+            
+            <div class="field">
+                <label class="label">Género</label>
+                <div class="radio-group">
+                    <label class="radio">
+                        <input type="radio" name="genero"> Masculino
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="genero"> Femenino
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="genero"> Otro
+                    </label>
+                </div>
+            </div>
+            
+            <div class="field">
+                <label class="label">Contraseña</label>
+                <input class="input" type="password" placeholder="********">
+            </div>
+            
+            <div class="botones-grupo">
+                <button type="submit" class="button is-link">Registrar</button>
+                <button type="button" class="button is-light">Cancelar</button>
+            </div>
+            
+        </form>
+
+    </div>
+
+</body>
+</html>

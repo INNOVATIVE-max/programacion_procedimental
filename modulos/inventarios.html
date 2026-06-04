@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - INNOVATIVE</title>
+    <style>
+        :root {
+            --bg-fondo: #0b0f19;
+            --bg-bloque: #161b26;
+            --neon-azul: #00f2fe;
+            --texto-blanco: #ffffff;
+            --texto-gris: #94a3b8;
+            --alerta-rojo: #ff4a4a;
+            --alerta-verde: #00ff87;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: var(--bg-fondo);
+            color: var(--texto-blanco);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .contenedor {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--neon-azul);
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: var(--texto-gris);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* Tabla de Inventario */
+        .tabla-contenedor {
+            background-color: var(--bg-bloque);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 242, 254, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgba(0, 242, 254, 0.05);
+            color: var(--neon-azul);
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-bottom: 2px solid rgba(0, 242, 254, 0.2);
+        }
+
+        td {
+            padding: 15px 20px;
+            color: var(--texto-gris);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 1rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .producto-nombre {
+            color: var(--texto-blanco);
+            font-weight: bold;
+        }
+
+        /* Estados de Stock */
+        .badge {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .badge.disponible {
+            background-color: rgba(0, 255, 135, 0.1);
+            color: var(--alerta-verde);
+            border: 1px solid var(--alerta-verde);
+        }
+
+        .badge.critico {
+            background-color: rgba(255, 74, 74, 0.1);
+            color: var(--alerta-rojo);
+            border: 1px solid var(--alerta-rojo);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        
+        <header>
+            <h1>INNOVATIVE</h1>
+            <p>Control de Inventario y Stock</p>
+        </header>
+
+        <div class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Cantidad Stock</th>
+                        <th>Precio Unidad</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="producto-nombre">Postre 3 Leches</td>
+                        <td>Postres</td>
+                        <td>24 uds</td>
+                        <td>$8.500</td>
+                        <td><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td class="producto-nombre">Pollo con Arroz</td>
+                        <td>Plato Fuerte</td>
+                        <td>45 uds</td>
+                        <td>$18.000</td>
+                        <td><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td class="producto-nombre">Pizza</td>
+                        <td>Plato Fuerte</td>
+                        <td>8 uds</td>
+                        <td>$15.000</td>
+                        <td><span class="badge critico">Stock Bajo</span></td>
+                    </tr>
+                    <tr>
+                        <td class="producto-nombre">Menú Infantil</td>
+                        <td>Infantil</td>
+                        <td>15 uds</td>
+                        <td>$12.000</td>
+                        <td><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>

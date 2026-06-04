@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Módulo Pedidos - INNOVATIVE</title>
+
+    <style>
+        :root {
+            --bg-fondo: #0b0f19;
+            --bg-bloque: #161b26;
+            --neon-azul: #00f2fe;
+            --texto-blanco: #ffffff;
+            --texto-gris: #94a3b8;
+            --input-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body{
+            font-family: sans-serif;
+            background-color: var(--bg-fondo);
+            color: var(--texto-blanco);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .contenedor{
+            width: 320px;
+            background: var(--bg-bloque);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 242, 254, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        h2{
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--neon-azul);
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        label{
+            display: block;
+            margin-top: 15px;
+            color: var(--texto-blanco);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #0b0f19;
+            border: 1px solid var(--input-border);
+            border-radius: 6px;
+            color: var(--texto-blanco);
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus{
+            outline: none;
+            border-color: var(--neon-azul);
+            box-shadow: 0 0 8px rgba(0, 242, 254, 0.3);
+        }
+
+        button{
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--neon-azul);
+            border: none;
+            border-radius: 6px;
+            color: #0b0f19;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover{
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+            transform: translateY(-1px);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h2>Pedidos</h2>
+
+        <label>Producto</label>
+        <input type="text" placeholder="Ej: Pizza">
+
+        <label>Dirección</label>
+        <input type="text" placeholder="Calle o Avenida">
+
+        <label>Nombre del usuario</label>
+        <input type="text" placeholder="Nombre cliente">
+
+        <label>Cantidad</label>
+        <input type="number" min="1" value="1">
+
+        <label>Método de pago</label>
+        <select>
+            <option>Efectivo</option>
+            <option>Nequi</option>
+            <option>Tarjeta</option>
+        </select>
+
+        <label>Teléfono</label>
+        <input type="text" placeholder="Número de contacto">
+
+        <button>Guardar Pedido</button>
+
+    </div>
+
+</body>
+</html>
