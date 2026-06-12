@@ -47,6 +47,87 @@
             margin: 0;
         }
 
+        /* Formulario de Registro */
+        .formulario-contenedor {
+            background-color: var(--bg-bloque);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 242, 254, 0.1);
+        }
+
+        .formulario-contenedor h2 {
+            font-size: 1.5rem;
+            color: var(--neon-azul);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .grupo-campos {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .campo {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .campo.ancho-completo {
+            flex: 100%;
+        }
+
+        .campo label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--texto-gris);
+            font-size: 0.95rem;
+        }
+
+        .campo input, .campo textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--bg-fondo);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: var(--texto-blanco);
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .campo input:focus, .campo textarea:focus {
+            outline: none;
+            border-color: var(--neon-azul);
+        }
+
+        .campo textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        .boton-contenedor {
+            text-align: right;
+        }
+
+        .boton-contenedor button {
+            padding: 12px 30px;
+            border: none;
+            background: var(--neon-azul);
+            color: var(--bg-fondo);
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .boton-contenedor button:hover {
+            box-shadow: 0 0 15px var(--neon-azul);
+            opacity: 0.9;
+        }
+
         /* Tabla de Inventario */
         .tabla-contenedor {
             background-color: var(--bg-bloque);
@@ -116,6 +197,31 @@
             <p>Control de Inventario y Stock</p>
         </header>
 
+        <div class="formulario-contenedor">
+            <h2>Actualizar Stock / Registrar Movimiento</h2>
+            <form id="formulario-inventarios">
+                <div class="grupo-campos">
+                    <div class="campo">
+                        <label for="ubicacion">Ubicación en Bodega / Vitrina</label>
+                        <input type="text" id="ubicacion" placeholder="Ej: Estante A-1, Nevera Principal">
+                    </div>
+                    <div class="campo">
+                        <label for="cantidad">Cantidad de Unidades</label>
+                        <input type="number" id="cantidad" placeholder="Ej: 15">
+                    </div>
+                </div>
+                <div class="grupo-campos">
+                    <div class="campo ancho-completo">
+                        <label for="comentarios">Comentarios / Observaciones</label>
+                        <textarea id="comentarios" placeholder="Escribe detalles del estado del producto o lote..."></textarea>
+                    </div>
+                </div>
+                <div class="boton-contenedor">
+                    <button type="submit">Actualizar Stock</button>
+                </div>
+            </form>
+        </div>
+
         <div class="tabla-contenedor">
             <table>
                 <thead>
@@ -162,5 +268,6 @@
 
     </div>
 
+    <script src="../js/inventarios.js"></script>
 </body>
 </html>
