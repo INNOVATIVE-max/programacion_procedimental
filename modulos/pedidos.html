@@ -28,7 +28,7 @@
         }
 
         .contenedor{
-            width: 320px;
+            width: 360px; /* Lo agrandé un pelín (de 320px a 360px) para que los select se vean premium */
             background: var(--bg-bloque);
             padding: 25px;
             border-radius: 12px;
@@ -96,35 +96,49 @@
 
 <body>
 
-    <div class="contenedor">
+    <form class="contenedor" id="formulario-pedidos">
 
         <h2>Pedidos</h2>
 
-        <label>Producto</label>
-        <input type="text" placeholder="Ej: Pizza">
-
-        <label>Dirección</label>
-        <input type="text" placeholder="Calle o Avenida">
-
-        <label>Nombre del usuario</label>
-        <input type="text" placeholder="Nombre cliente">
-
-        <label>Cantidad</label>
-        <input type="number" min="1" value="1">
-
-        <label>Método de pago</label>
-        <select>
-            <option>Efectivo</option>
-            <option>Nequi</option>
-            <option>Tarjeta</option>
+        <label for="tipo_movimiento">Tipo de Movimiento</label>
+        <select id="tipo_movimiento">
+            <option value="Seleccione">Seleccione...</option>
+            <option value="Ingreso">Ingreso (Venta)</option>
+            <option value="Egreso">Egreso (Gasto)</option>
         </select>
 
-        <label>Teléfono</label>
-        <input type="text" placeholder="Número de contacto">
+        <label for="fecha_corte">Fecha de Corte</label>
+        <input type="date" id="fecha_corte">
 
-        <button>Guardar Pedido</button>
+        <label for="categoria_contable">Categoría Contable</label>
+        <select id="categoria_contable">
+            <option value="Seleccione">Seleccione...</option>
+            <option value="Plato Fuerte">Plato Fuerte</option>
+            <option value="Bebidas">Bebidas</option>
+            <option value="Postres">Postres</option>
+        </select>
 
-    </div>
+        <label for="metodo_pago">Método de Pago</label>
+        <select id="metodo_pago">
+            <option value="Seleccione">Seleccione...</option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Nequi">Nequi</option>
+            <option value="Tarjeta">Tarjeta</option>
+        </select>
 
+        <label for="concepto">Concepto del Pedido</label>
+        <input type="text" id="concepto" placeholder="Ej: Pedido 2 Pizzas Familiares">
+
+        <label for="valor_total">Valor Total</label>
+        <input type="number" id="valor_total" placeholder="Ej: 30000">
+
+        <label for="email">Email del Cliente</label>
+        <input type="text" id="email" placeholder="cliente@correo.com">
+
+        <button type="submit">Guardar Pedido</button>
+
+    </form>
+
+    <script src="../js/pedidos.js"></script>
 </body>
 </html>
