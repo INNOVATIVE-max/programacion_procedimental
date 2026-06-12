@@ -65,10 +65,10 @@
             overflow: hidden;
         }
 
- .foto img{
-           width: 100%;
-height: 100%;
-object-fit: contain;
+        .foto img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .nombre{
@@ -98,7 +98,7 @@ object-fit: contain;
             font-weight: bold;
         }
 
-        .campo input{
+        .campo input, .campo select{
             width: 100%;
             padding: 10px;
             border: 2px solid #777;
@@ -138,59 +138,55 @@ object-fit: contain;
         <div class="contenido">
 
             <div class="perfil">
-
                 <div class="foto">
                     <img src="https://c.pxhere.com/photos/74/ce/india_asia_man_portrait_sudra_tourism_travel_people-1293785.jpg!d" alt="Foto cliente">
                 </div>
-
                 <div class="nombre">
                     Carlitos pro max
                 </div>
-
             </div>
 
-        
-            <div class="datos">
+            <form class="datos" id="formulario-contabilidad">
 
                 <div class="campo">
-                    <label>Ventas</label>
-                    <input type="text" placeholder="Ingrese las ventas">
+                    <label>Fecha de Corte</label>
+                    <input type="date" id="fecha_de_corte">
                 </div>
 
                 <div class="campo">
-                    <label>Fecha</label>
-                    <input type="date">
-                </div>
-
-                <div class="campo">
-                    <label>Ingresos</label>
-                    <input type="text" placeholder="Ingrese los ingresos">
+                    <label>Campo</label>
+                    <select id="campo">
+                        <option value="Seleccione">Seleccione...</option>
+                        <option value="Ventas">Ventas</option>
+                        <option value="Ingresos">Ingresos</option>
+                    </select>
                 </div>
 
                 <div class="campo">
                     <label>Egresos</label>
-                    <input type="text" placeholder="Ingrese los egresos">
+                    <input type="text" id="egresos" placeholder="Ingrese los egresos">
                 </div>
 
                 <div class="campo">
                     <label>Concepto</label>
-                    <input type="text" placeholder="Ingrese el concepto">
+                    <input type="text" id="concepto" placeholder="Ingrese el concepto">
                 </div>
 
                 <div class="campo">
-                    <label>Valor</label>
-                    <input type="number" placeholder="Ingrese el valor">
+                    <label>Valor Total</label>
+                    <input type="number" id="valor_total" placeholder="Ingrese el valor total">
                 </div>
 
                 <div class="boton">
-                    <button>Guardar</button>
+                    <button type="submit">Guardar</button>
                 </div>
 
-            </div>
+            </form>
 
         </div>
 
     </div>
 
+    <script src="../js/contabilidad.js"></script>
 </body>
 </html>
